@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Styles/index.css";
-import App from "./Components/App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <h2>SuperGIF</h2>
   </React.StrictMode>,
   document.getElementById("root")
 );
