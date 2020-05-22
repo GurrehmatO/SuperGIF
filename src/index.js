@@ -1,11 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Styles/index.css";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import * as serviceWorker from "./serviceWorker";
+import Header from "./Components/Header";
+import themeConfig from "./Styles/themeConfig";
+
+const theme = createMuiTheme(themeConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <h2>SuperGIF</h2>
+    <ThemeProvider theme={theme}>
+      <Header />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
