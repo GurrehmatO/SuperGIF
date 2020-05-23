@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Gallery from "react-photo-gallery";
 import { CircularProgress } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Img } from "react-image";
+import Masonry from "react-masonry-css";
 import Header from "./Header";
 import { useInfiniteScroll } from "../utils";
 import { getGifList } from "../Actions/gifList_actions";
@@ -29,23 +30,29 @@ const HomePage = () => {
     );
   }, [dispatch, pageNum]);
 
-  const imageList = useMemo(
-    () =>
-      gifList.list.map((imageData) => ({
-        ...imageData.images.fixed_height,
-        src: imageData.images.fixed_height.url,
-        width: parseInt(imageData.images.fixed_height.width, 10),
-        height: parseInt(imageData.images.fixed_height.height, 10),
-      })),
-    [gifList.list]
-  );
   return (
     <>
       <Header />
-      <Gallery
-        photos={imageList}
-        // renderImage={GalleryImage}
-      />
+      <div className={classes.masonryContainer}>
+        <Masonry className={classes.masonry} columnClassName={classes.column}>
+          {gifList.list.map((imageData) => (
+            <Img
+              key={imageData.id}
+              src={imageData.images.fixed_width.url}
+              loader={
+                <div
+                  style={{
+                    width: imageData.images.fixed_width.width,
+                    height: imageData.images.fixed_width.height,
+                  }}
+                >
+                  <CircularProgress />
+                </div>
+              }
+            />
+          ))}
+        </Masonry>
+      </div>
       {gifList.loading && <CircularProgress />}
       <div ref={BottomBorderRef} className={classes.border} />
     </>

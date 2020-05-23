@@ -7,8 +7,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import * as serviceWorker from "./serviceWorker";
 import themeConfig from "./Styles/themeConfig";
-// import Routes from "./routes";
-import HomePage from "./Components/HomePage";
+import Routes from "./routes";
 import combinedReducer from "./Reducers";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -22,7 +21,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <HomePage />
+        <Routes />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,

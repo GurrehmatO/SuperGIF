@@ -11,6 +11,7 @@ const useStyles = makeStyles(styles);
 const Header = () => {
   const classes = useStyles(styles);
   const scrolled = useScrollTrigger({
+    disableHysteresis: true,
     threshold: 0,
   });
   const showShadow = useDebounce(scrolled, 250);
