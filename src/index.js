@@ -2,17 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Styles/index.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import * as serviceWorker from "./serviceWorker";
-import Header from "./Components/Header";
 import themeConfig from "./Styles/themeConfig";
+import Routes from "./routes";
+import combinedReducer from "./Reducers";
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  combinedReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
 const theme = createMuiTheme(themeConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Header />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

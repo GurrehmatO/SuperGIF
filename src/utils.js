@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useDebounce(value, delay) {
+export const useDebounce = (value, delay) => {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -22,6 +22,11 @@ export function useDebounce(value, delay) {
   );
 
   return debouncedValue;
-}
+};
 
-export const a = "";
+export const makeQueryString = (params) =>
+  Object.keys(params)
+    .map(
+      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+    )
+    .join("&");
