@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SuperGIF/static/css/main.c053883b.chunk.css",
+    "main.js": "/SuperGIF/static/js/main.017e2466.chunk.js",
+    "main.js.map": "/SuperGIF/static/js/main.017e2466.chunk.js.map",
+    "runtime-main.js": "/SuperGIF/static/js/runtime-main.9c8ea512.js",
+    "runtime-main.js.map": "/SuperGIF/static/js/runtime-main.9c8ea512.js.map",
+    "static/js/2.b07ab89f.chunk.js": "/SuperGIF/static/js/2.b07ab89f.chunk.js",
+    "static/js/2.b07ab89f.chunk.js.map": "/SuperGIF/static/js/2.b07ab89f.chunk.js.map",
+    "index.html": "/SuperGIF/index.html",
+    "precache-manifest.9d9065211f5c238391b53c8215f12910.js": "/SuperGIF/precache-manifest.9d9065211f5c238391b53c8215f12910.js",
+    "service-worker.js": "/SuperGIF/service-worker.js",
+    "static/css/main.c053883b.chunk.css.map": "/SuperGIF/static/css/main.c053883b.chunk.css.map",
+    "static/js/2.b07ab89f.chunk.js.LICENSE.txt": "/SuperGIF/static/js/2.b07ab89f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c8ea512.js",
+    "static/js/2.b07ab89f.chunk.js",
+    "static/css/main.c053883b.chunk.css",
+    "static/js/main.017e2466.chunk.js"
+  ]
+}
