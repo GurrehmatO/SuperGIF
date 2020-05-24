@@ -13,16 +13,23 @@ export default () => ({
     alignItems: "center",
   },
   masonry: {
-    columns: "5 150px",
-    columnGap: 12,
     width: "90%",
     margin: "0 auto",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "stretch",
+  },
+  column: {
+    minWidth: 150,
+    marginRight: 12,
+    flexGrow: 1,
+    "&:last-child": {
+      marginRight: "unset",
+    },
   },
   brick: {
     margin: "6px 0",
-    display: "inline-block",
     width: "100%",
-    transition: "all .25s ease-in-out",
   },
   listImage: {
     width: "100%",

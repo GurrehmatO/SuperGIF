@@ -27,7 +27,7 @@ const TrendsPicker = (props) => {
       {["Trending", ...trends.list].map((trend) => (
         <Chip
           label={trend}
-          icon={trend === "Trending" && <TrendingUpIcon />}
+          icon={trend === "Trending" ? <TrendingUpIcon /> : undefined}
           key={trend}
           onClick={() => setTrend(trend === "Trending" ? null : trend)}
           clickable
