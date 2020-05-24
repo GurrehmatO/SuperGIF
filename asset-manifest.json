@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/SuperGIF/static/css/main.c053883b.chunk.css",
-    "main.js": "/SuperGIF/static/js/main.9f9e5144.chunk.js",
-    "main.js.map": "/SuperGIF/static/js/main.9f9e5144.chunk.js.map",
+    "main.js": "/SuperGIF/static/js/main.3570bd6b.chunk.js",
+    "main.js.map": "/SuperGIF/static/js/main.3570bd6b.chunk.js.map",
     "runtime-main.js": "/SuperGIF/static/js/runtime-main.9c8ea512.js",
     "runtime-main.js.map": "/SuperGIF/static/js/runtime-main.9c8ea512.js.map",
-    "static/js/2.05149626.chunk.js": "/SuperGIF/static/js/2.05149626.chunk.js",
-    "static/js/2.05149626.chunk.js.map": "/SuperGIF/static/js/2.05149626.chunk.js.map",
+    "static/js/2.61e70c13.chunk.js": "/SuperGIF/static/js/2.61e70c13.chunk.js",
+    "static/js/2.61e70c13.chunk.js.map": "/SuperGIF/static/js/2.61e70c13.chunk.js.map",
     "index.html": "/SuperGIF/index.html",
-    "precache-manifest.84756c382a569846ab7be9963215f84d.js": "/SuperGIF/precache-manifest.84756c382a569846ab7be9963215f84d.js",
+    "precache-manifest.0d5b2810299fba2fbb525905475f87f0.js": "/SuperGIF/precache-manifest.0d5b2810299fba2fbb525905475f87f0.js",
     "service-worker.js": "/SuperGIF/service-worker.js",
     "static/css/main.c053883b.chunk.css.map": "/SuperGIF/static/css/main.c053883b.chunk.css.map",
-    "static/js/2.05149626.chunk.js.LICENSE.txt": "/SuperGIF/static/js/2.05149626.chunk.js.LICENSE.txt"
+    "static/js/2.61e70c13.chunk.js.LICENSE.txt": "/SuperGIF/static/js/2.61e70c13.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9c8ea512.js",
-    "static/js/2.05149626.chunk.js",
+    "static/js/2.61e70c13.chunk.js",
     "static/css/main.c053883b.chunk.css",
-    "static/js/main.9f9e5144.chunk.js"
+    "static/js/main.3570bd6b.chunk.js"
   ]
 }

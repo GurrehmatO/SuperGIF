@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SuperGIF/precache-manifest.84756c382a569846ab7be9963215f84d.js"
+  "/SuperGIF/precache-manifest.0d5b2810299fba2fbb525905475f87f0.js"
 );
 
 self.addEventListener('message', (event) => {
