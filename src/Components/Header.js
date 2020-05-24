@@ -14,7 +14,7 @@ const Header = () => {
     disableHysteresis: true,
     threshold: 0,
   });
-  const showShadow = useDebounce(scrolled, 250);
+  const showShadow = useDebounce(scrolled, 125);
   return (
     <AppBar
       position="sticky"
