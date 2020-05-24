@@ -14,4 +14,7 @@ export default {
       '"Segoe UI Symbol"',
     ].join(","),
   },
+  palette: {
+    primary: { main: "#95C9FF" },
+  },
 };

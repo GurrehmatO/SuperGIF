@@ -1,4 +1,11 @@
-export default {
+export default () => ({
+  root: {
+    width: "100vw",
+    minHeight: "calc(100vh - 96px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
   masonryContainer: {
     width: "100vw",
     display: "flex",
@@ -6,22 +13,25 @@ export default {
     alignItems: "center",
   },
   masonry: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-start",
+    columns: "5 150px",
+    columnGap: 12,
+    width: "90%",
     margin: "0 auto",
   },
-  column: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "stretch",
-    "& > *": {
-      width: "95%",
-      margin: 5,
-    },
+  brick: {
+    margin: "6px 0",
+    display: "inline-block",
+    width: "100%",
+    transition: "all .25s ease-in-out",
   },
-  border: {
-    height: 2,
-    width: 1,
+  listImage: {
+    width: "100%",
+    borderRadius: 3,
   },
-};
+  loader: {
+    margin: "0 auto",
+  },
+  invisible: {
+    opacity: 1,
+  },
+});
