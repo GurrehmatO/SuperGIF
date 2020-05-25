@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c52b4fb9ee5deb1d777e5f027be6a3c1",
+    "revision": "572f88c27b37a635ae539a667572ee2f",
     "url": "/SuperGIF/index.html"
   },
   {
-    "revision": "7dd7c05beb42b4c0a857",
+    "revision": "69805a25978814b85b95",
     "url": "/SuperGIF/static/css/main.c053883b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SuperGIF/static/js/2.31124b44.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7dd7c05beb42b4c0a857",
-    "url": "/SuperGIF/static/js/main.962149bb.chunk.js"
+    "revision": "69805a25978814b85b95",
+    "url": "/SuperGIF/static/js/main.246ed213.chunk.js"
   },
   {
     "revision": "5af8c928a803b0aed93a",
