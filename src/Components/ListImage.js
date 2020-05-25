@@ -8,11 +8,11 @@ const ListImage = (props) => {
     <Img
       alt={imageData.id}
       className={classes.listImage}
-      src={imageData.images.fixed_width_small.url}
+      src={imageData.images.fixed_width_downsampled.url}
       loader={
         <div
           style={{
-            height: (imageData.images.fixed_width_small.height * 5) / 4,
+            height: (imageData.images.fixed_width_downsampled.height * 5) / 4,
             width: "100%",
             display: "flex",
             flexDirection: "row",

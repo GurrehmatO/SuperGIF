@@ -34,7 +34,7 @@ const HomePage = () => {
     () =>
       makeImageColumns(
         gifList.list,
-        "images.fixed_width_small.height",
+        "images.fixed_width_downsampled.height",
         columnCount
       ),
     [gifList.list, columnCount]
