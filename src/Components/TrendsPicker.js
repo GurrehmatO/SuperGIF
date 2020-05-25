@@ -41,12 +41,19 @@ const TrendsPicker = (props) => {
             }
           })()}
           key={trend}
-          onClick={() =>
-            trend === SEARCH
-              ? setSearch((s) => ({ ...s, dialogOpen: true }))
-              : setTrend(trend === TRENDING ? null : trend)
+          onClick={
+            trend === SEARCH && searchLabel
+              ? undefined
+              : () => {
+                  if (trend === SEARCH) {
+                    setSearch((s) => ({ ...s, dialogOpen: true }));
+                  } else {
+                    setTrend(trend === TRENDING ? null : trend);
+                    setSearch((s) => ({ ...s, searchMode: false }));
+                  }
+                }
           }
-          clickable
+          clickable={!(trend === SEARCH && searchLabel)}
           onDelete={
             trend === SEARCH && !!searchLabel
               ? () => {
