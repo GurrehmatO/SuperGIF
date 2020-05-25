@@ -4,4 +4,5 @@ export const ENDPOINTS = {
   search: "/gifs/search",
   trending: "/gifs/trending",
   trends: "/trending/searches",
+  autocomplete: "/gifs/search/tags",
 };

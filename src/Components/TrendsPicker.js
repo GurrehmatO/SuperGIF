@@ -3,15 +3,18 @@ import { AppBar, useScrollTrigger, Chip } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+import SearchIcon from "@material-ui/icons/Search";
 import clsx from "clsx";
 import { useDebounce } from "../utils";
 import styles from "../Styles/trends.style";
+import { SEARCH, TRENDING } from "../Constants/strings";
 
 const useStyles = makeStyles(styles);
+
 const TrendsPicker = (props) => {
   const classes = useStyles();
   const trends = useSelector((store) => store.trends);
-  const { selectedTrend, setTrend } = props;
+  const { selectedTrend, setTrend, setSearch, searchLabel } = props;
   const scrolled = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -24,18 +27,44 @@ const TrendsPicker = (props) => {
       position="sticky"
       style={{ top: moveUp ? 71 : 96 }}
     >
-      {["Trending", ...trends.list].map((trend) => (
+      {[SEARCH, TRENDING, ...trends.list].map((trend) => (
         <Chip
-          label={trend}
-          icon={trend === "Trending" ? <TrendingUpIcon /> : undefined}
+          label={trend === SEARCH ? searchLabel : trend}
+          icon={(() => {
+            switch (trend) {
+              case SEARCH:
+                return <SearchIcon />;
+              case TRENDING:
+                return <TrendingUpIcon />;
+              default:
+                return undefined;
+            }
+          })()}
           key={trend}
-          onClick={() => setTrend(trend === "Trending" ? null : trend)}
+          onClick={() =>
+            trend === SEARCH
+              ? setSearch((s) => ({ ...s, dialogOpen: true }))
+              : setTrend(trend === TRENDING ? null : trend)
+          }
           clickable
+          onDelete={
+            trend === SEARCH && !!searchLabel
+              ? () => {
+                  setSearch((s) => ({
+                    ...s,
+                    searchMode: false,
+                  }));
+                }
+              : undefined
+          }
           className={clsx(
             classes.chip,
-            (selectedTrend === trend ||
-              (selectedTrend === null && trend === "Trending")) &&
-              classes.selectedChip
+            (searchLabel
+              ? trend === SEARCH
+              : selectedTrend === trend ||
+                (selectedTrend === null && trend === TRENDING)) &&
+              classes.selectedChip,
+            trend === SEARCH && !searchLabel && classes.searchChip
           )}
           color="primary"
         />
