@@ -12,6 +12,7 @@ import { LIST_LIMIT } from "../Constants/numeric";
 import styles from "../Styles/HomePage.style";
 import TrendsPicker from "./TrendsPicker";
 import SearchDialog from "./SearchDialog";
+import ImageDialog from "./ImageDialog";
 
 const useStyles = makeStyles(styles);
 
@@ -46,6 +47,11 @@ const HomePage = () => {
     searchMode: false,
   });
 
+  const [imageDialog, setDialog] = useState({
+    imageData: null,
+    open: false,
+  });
+
   useEffect(() => {
     dispatch(getTrendsList());
   }, [dispatch]);
@@ -78,11 +84,16 @@ const HomePage = () => {
       />
       <div className={classes.masonryContainer}>
         <div className={classes.masonry}>
-          {columns.map((column) => (
-            <div className={classes.column}>
+          {columns.map((column, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className={classes.column} key={`column${index}`}>
               {column.list.map((imageData) => (
                 <div className={classes.brick} key={imageData.id}>
-                  <ListImage classes={classes} imageData={imageData} />
+                  <ListImage
+                    classes={classes}
+                    imageData={imageData}
+                    setDialog={setDialog}
+                  />
                 </div>
               ))}
             </div>
@@ -94,6 +105,12 @@ const HomePage = () => {
         className={clsx(classes.loader, !gifList.loading && classes.invisible)}
       />
       <SearchDialog config={search} setSearch={setSearch} />
+      <ImageDialog
+        imageData={imageDialog.imageData}
+        open={imageDialog.open}
+        setDialog={setDialog}
+        classes={classes}
+      />
     </div>
   );
 };

@@ -18,6 +18,7 @@ import {
 import { useDebounce } from "../utils";
 
 import styles from "../Styles/search.style";
+import { SEARCH_PLACEHOLDER } from "../Constants/strings";
 
 const useStyles = makeStyles(styles);
 
@@ -64,7 +65,7 @@ const SearchDialog = (props) => {
       <DialogContent className={classes.dialog}>
         <form onSubmit={handleSubmit}>
           <Input
-            placeholder="Search for GIFs"
+            placeholder={SEARCH_PLACEHOLDER}
             value={config.key}
             variant="outlined"
             autoFocus

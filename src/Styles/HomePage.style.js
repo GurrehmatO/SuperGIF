@@ -6,6 +6,9 @@ export default () => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  dialogImage: {
+    width: "100%",
+  },
   masonryContainer: {
     width: "100vw",
     display: "flex",
@@ -28,7 +31,7 @@ export default () => ({
     },
   },
   brick: {
-    margin: "6px 0",
+    margin: "12px 0",
     width: "100%",
   },
   listImage: {
